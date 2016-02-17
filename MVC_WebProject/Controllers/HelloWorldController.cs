@@ -21,15 +21,16 @@ namespace MvcMovie.Controllers
         // 
         // GET: /HelloWorld/Welcome/ 
 
-        public string Welcome(string name, int Age = 0)
+        //public string Welcome(string name, int NumTimes = 0)
+        //{
+        //        return HttpUtility.HtmlEncode("Hello " + name + ", Num Times: " + NumTimes);
+        //}
+        public ActionResult Welcome(string name, int NumTimes = 1)
         {
-            if (Age != 0)
-            {
-                return HttpUtility.HtmlEncode("Hello " + name + ", You are: " + Age + "years old...");
-            } else
-            {
-                return HttpUtility.HtmlEncode("Hello " + name + ", You never told me how old you are...");
-            }
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = NumTimes;
+
+            return View();
         }
     }
 }
