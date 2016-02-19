@@ -14,11 +14,60 @@ namespace MVC_WebProject.Controllers
     {
         private MovieDBContext db = new MovieDBContext();
 
+
         // GET: Movies
-        public ActionResult Index()
+        public ActionResult Index(string MovieGenre, string SearchString)
         {
-            return View(db.Movies.ToList());
+            //----------------------------------------------------------------------------------------------
+            // This section is for creating a genre list to fliter by on web page
+            var GenreLst = new List<string>();              // Create empty list of string items
+            var GenreQry = from d in db.Movies              // Create a SQL selection from the database
+                           orderby d.Genre                  // Put genres in order
+                           select d.Genre;                  // Select all genres
+            GenreLst.AddRange(GenreQry.Distinct());         // Add Genres to list
+            ViewBag.MovieGenre = new SelectList(GenreLst);  // Viewbag is populated for later use in IEnumerable
+                                                            // when dropdown list is generated.
+            
+            //----------------------------------------------------------------------------------------------
+                                                         
+            // Looping through movies to search and find title if search string is provided
+            // This method replaces the previous db.Movies.ToList() method since we want to
+            // display a specific set of movies over all movies at once. 
+            var movies = from m in db.Movies            // Selects all rows in movies
+                         select m;
+            
+            //----------------------------------------------------------------------------------------------
+            // This section is removing bad records if they are not correct per search/genre filters.
+
+            // Slightly confused how this is operating since the same var is used for query and assignment.
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                movies = movies.Where(t => t.Title.Contains(SearchString));
+            }
+            if (!string.IsNullOrEmpty(MovieGenre))
+            {
+                movies = movies.Where(g => g.Genre == MovieGenre);
+            }
+            //return View(db.Movies.ToList());      // This is previous method that would return all rows
+            return View(movies);                    // This returns specific movies obj with desired items.
         }
+
+// Optional get method...
+// This method has the search string following the /Movies/Index/SearchString
+// The downfall here is the user must modify the URL to search which is a no-no.
+
+//        // GET: Movies
+//        public ActionResult Index(string SearchString)
+//        {
+//            var movies = from m in db.Movies
+//                         select m;
+//            if (!String.IsNullOrEmpty(SearchString))
+//            {
+//                movies = movies.Where(s => s.Title.Contains(SearchString));
+//            }
+//            //return View(db.Movies.ToList());
+//            return View(movies);
+//        }
 
         // GET: Movies/Details/5
         public ActionResult Details(int? id)
@@ -46,7 +95,7 @@ namespace MVC_WebProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public ActionResult Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Price,Comments")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +127,7 @@ namespace MVC_WebProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public ActionResult Edit([Bind(Include = "ID,Title,ReleaseDate,Genre,Price,Comments")] Movie movie)
         {
             if (ModelState.IsValid)
             {
