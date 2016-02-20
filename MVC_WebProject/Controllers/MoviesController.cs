@@ -132,7 +132,7 @@ namespace MVC_WebProject.Controllers
                            where d.ControlName == Srch                     
                            select d.Control1;
             RtgLst.AddRange(RtgQry.First().Split(','));        
-            ViewBag.RatingOpts = new SelectList(RtgLst);
+            ViewBag.RatingOpts = new MultiSelectList(RtgLst);
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
             return View(movie);
         }
