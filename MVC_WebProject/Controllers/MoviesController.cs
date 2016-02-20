@@ -85,6 +85,7 @@ namespace MVC_WebProject.Controllers
             {
                 return HttpNotFound();
             }
+
             return View(movie);
         }
 
@@ -123,6 +124,16 @@ namespace MVC_WebProject.Controllers
             {
                 return HttpNotFound();
             }
+
+            var Srch = "AvailableRatings";
+        
+            var RtgLst = new List<string>();
+            var RtgQry = from d in db.FieldControls
+                           where d.ControlName == Srch                     
+                           select d.Control1;
+            RtgLst.AddRange(RtgQry.First().Split(','));        
+            ViewBag.RatingOpts = new SelectList(RtgLst);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
             return View(movie);
         }
 

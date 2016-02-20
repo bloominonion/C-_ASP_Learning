@@ -12,8 +12,8 @@
     @using (Html.BeginForm("Index", "Movies", FormMethod.Get))  // Calls index action method with
     {                                                           // movies controller
         <p> 
-            Title: @Html.TextBox("SearchString")                // Inserts text box that returns var SearchString 
-            Genre: @Html.DropDownList("MovieGenre", "All")
+            Title: @Html.TextBox("SearchString")                @*Returns search string from text box*@
+            Genre: @Html.DropDownList("MovieGenre", "All")      @*Returns drop down from viewbag.MovieGenre*@
             <input type="submit" value="Filter"/>
         </p>
     }

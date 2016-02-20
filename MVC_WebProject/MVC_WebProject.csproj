@@ -200,6 +200,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FieldControlsController.cs" />
     <Compile Include="Controllers\HelloWorldController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -218,6 +219,10 @@
     <Compile Include="Migrations\201602200010384_DataAnnotations.cs" />
     <Compile Include="Migrations\201602200010384_DataAnnotations.Designer.cs">
       <DependentUpon>201602200010384_DataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602200536029_AddedFieldControls.cs" />
+    <Compile Include="Migrations\201602200536029_AddedFieldControls.Designer.cs">
+      <DependentUpon>201602200536029_AddedFieldControls.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -294,6 +299,11 @@
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Movies\Edit.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\FieldControls\Create.cshtml" />
+    <Content Include="Views\FieldControls\Delete.cshtml" />
+    <Content Include="Views\FieldControls\Details.cshtml" />
+    <Content Include="Views\FieldControls\Edit.cshtml" />
+    <Content Include="Views\FieldControls\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -315,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602200010384_DataAnnotations.resx">
       <DependentUpon>201602200010384_DataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602200536029_AddedFieldControls.resx">
+      <DependentUpon>201602200536029_AddedFieldControls.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
