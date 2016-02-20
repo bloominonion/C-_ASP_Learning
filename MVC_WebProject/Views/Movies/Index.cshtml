@@ -9,10 +9,10 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 
-    @using (Html.BeginForm("Index","Movies",FormMethod.Get))
-    {
+    @using (Html.BeginForm("Index", "Movies", FormMethod.Get))  // Calls index action method with
+    {                                                           // movies controller
         <p> 
-            Title: @Html.TextBox("SearchString")
+            Title: @Html.TextBox("SearchString")                // Inserts text box that returns var SearchString 
             Genre: @Html.DropDownList("MovieGenre", "All")
             <input type="submit" value="Filter"/>
         </p>
@@ -28,6 +28,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Price)
@@ -51,6 +54,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Comments)

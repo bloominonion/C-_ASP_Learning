@@ -16,7 +16,7 @@ namespace MVC_WebProject.Controllers
 
 
         // GET: Movies
-        public ActionResult Index(string MovieGenre, string SearchString)
+        public ActionResult Index(string MovieGenre, string SearchString, string Rting)
         {
             //----------------------------------------------------------------------------------------------
             // This section is for creating a genre list to fliter by on web page
@@ -47,6 +47,10 @@ namespace MVC_WebProject.Controllers
             if (!string.IsNullOrEmpty(MovieGenre))
             {
                 movies = movies.Where(g => g.Genre == MovieGenre);
+            }
+            if (!string.IsNullOrEmpty(Rting))
+            {
+                movies = movies.Where(r => r.Rating == Rting);
             }
             //return View(db.Movies.ToList());      // This is previous method that would return all rows
             return View(movies);                    // This returns specific movies obj with desired items.
@@ -95,7 +99,7 @@ namespace MVC_WebProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Price,Comments")] Movie movie)
+        public ActionResult Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Rating,Price,Comments")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -127,7 +131,7 @@ namespace MVC_WebProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,ReleaseDate,Genre,Price,Comments")] Movie movie)
+        public ActionResult Edit([Bind(Include = "ID,Title,ReleaseDate,Genre,Rating,Price,Comments")] Movie movie)
         {
             if (ModelState.IsValid)
             {

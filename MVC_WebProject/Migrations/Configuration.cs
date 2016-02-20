@@ -1,5 +1,6 @@
 namespace MVC_WebProject.Migrations
 {
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -14,6 +15,7 @@ namespace MVC_WebProject.Migrations
 
         protected override void Seed(MVC_WebProject.Models.MovieDBContext context)
         {
+            
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

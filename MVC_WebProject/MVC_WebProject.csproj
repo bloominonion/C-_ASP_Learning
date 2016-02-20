@@ -207,21 +207,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602180127012_Initial.cs" />
-    <Compile Include="Migrations\201602180127012_Initial.Designer.cs">
-      <DependentUpon>201602180127012_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201602192157033_Initial.cs" />
+    <Compile Include="Migrations\201602192157033_Initial.Designer.cs">
+      <DependentUpon>201602192157033_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602180138426_addedBlahField.cs" />
-    <Compile Include="Migrations\201602180138426_addedBlahField.Designer.cs">
-      <DependentUpon>201602180138426_addedBlahField.cs</DependentUpon>
+    <Compile Include="Migrations\201602192205185_Rating.cs" />
+    <Compile Include="Migrations\201602192205185_Rating.Designer.cs">
+      <DependentUpon>201602192205185_Rating.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602180141142_addedCarsTable.cs" />
-    <Compile Include="Migrations\201602180141142_addedCarsTable.Designer.cs">
-      <DependentUpon>201602180141142_addedCarsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602180150077_ChangedBlahFldName.cs" />
-    <Compile Include="Migrations\201602180150077_ChangedBlahFldName.Designer.cs">
-      <DependentUpon>201602180150077_ChangedBlahFldName.cs</DependentUpon>
+    <Compile Include="Migrations\201602200010384_DataAnnotations.cs" />
+    <Compile Include="Migrations\201602200010384_DataAnnotations.Designer.cs">
+      <DependentUpon>201602200010384_DataAnnotations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -311,17 +307,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602180127012_Initial.resx">
-      <DependentUpon>201602180127012_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602192157033_Initial.resx">
+      <DependentUpon>201602192157033_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602180138426_addedBlahField.resx">
-      <DependentUpon>201602180138426_addedBlahField.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602192205185_Rating.resx">
+      <DependentUpon>201602192205185_Rating.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602180141142_addedCarsTable.resx">
-      <DependentUpon>201602180141142_addedCarsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602180150077_ChangedBlahFldName.resx">
-      <DependentUpon>201602180150077_ChangedBlahFldName.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602200010384_DataAnnotations.resx">
+      <DependentUpon>201602200010384_DataAnnotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

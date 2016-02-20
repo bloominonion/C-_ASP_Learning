@@ -7,13 +7,13 @@ namespace MVC_WebProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addedBlahField : IMigrationMetadata
+    public sealed partial class Rating : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedBlahField));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Rating));
         
         string IMigrationMetadata.Id
         {
-            get { return "201602180138426_addedBlahField"; }
+            get { return "201602192205185_Rating"; }
         }
         
         string IMigrationMetadata.Source

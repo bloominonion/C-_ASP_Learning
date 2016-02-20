@@ -7,13 +7,13 @@ namespace MVC_WebProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addedCarsTable : IMigrationMetadata
+    public sealed partial class DataAnnotations : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedCarsTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DataAnnotations));
         
         string IMigrationMetadata.Id
         {
-            get { return "201602180141142_addedCarsTable"; }
+            get { return "201602200010384_DataAnnotations"; }
         }
         
         string IMigrationMetadata.Source

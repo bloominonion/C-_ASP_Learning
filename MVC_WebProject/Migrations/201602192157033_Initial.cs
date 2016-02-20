@@ -7,23 +7,20 @@ namespace MVC_WebProject.Migrations
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.Movies",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        Title = c.String(),
-                        ReleaseDate = c.DateTime(nullable: false),
-                        Genre = c.String(),
-                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
-                    })
-                .PrimaryKey(t => t.ID);
-            
+            DropTable("dbo.Cars");
         }
         
         public override void Down()
         {
-            DropTable("dbo.Movies");
+            CreateTable(
+                "dbo.Cars",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        ModelName = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
         }
     }
 }
