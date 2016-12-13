@@ -1,3 +1,5 @@
+MVC_WebProject/Scripts/*.js linguist-vendored
+
 ###############################################################################
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
